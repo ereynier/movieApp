@@ -2,9 +2,9 @@ import { MediaType, TrendingResult } from '~/interfaces/apiresults';
 
 const TMDB_KEY = process.env.EXPO_PUBLIC_TMDB_KEY;
 
-export const getTrending = async (page: number = 1): Promise<TrendingResult> => {
+export const getTrending = async (): Promise<TrendingResult> => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/trending/all/day?language=fr-FR&api_key=${TMDB_KEY}&page=${page}`
+    `https://api.themoviedb.org/3/trending/all/day?language=fr-FR&api_key=${TMDB_KEY}&page=${1}`
   );
 
   const data = await response.json();
